@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Cyro\CyroController;
+use App\Http\Controllers\Tiradentes\TiradentesController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,5 +23,8 @@ Route::post('/v1/tray-webhook', [CyroController::class, 'tray_webhook'])->withou
 Route::post('/v1/webhook-shopify', [CyroController::class, 'shopify_webhook'])->withoutMiddleware("throttle:api");
 Route::post('/v1/cartpanda-webhook', [CyroController::class, 'cartpanda_webhook'])->withoutMiddleware("throttle:api");
 Route::post('/products', [CyroController::class, 'products'])->withoutMiddleware("throttle:api");
+
+
+Route::get('/v1/teste', [TiradentesController::class, 'teste'])->withoutMiddleware("throttle:api");
 
 
