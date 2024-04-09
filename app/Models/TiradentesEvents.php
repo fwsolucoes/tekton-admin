@@ -24,8 +24,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class TiradentesEvents extends Model
 {
-	protected $table = 'events';
+	
 	protected $connection = 'mysql_tiradentes';
-
+	protected $table = 'events';
 	
 }
