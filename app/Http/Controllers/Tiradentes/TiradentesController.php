@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Cyro;
+namespace App\Http\Controllers\Tiradentes;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProfileUpdateRequest;
