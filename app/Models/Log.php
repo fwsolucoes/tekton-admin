@@ -24,6 +24,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Log extends Model
 {
+	protected $connection = 'mysql_tiradentes';
 	protected $table = 'logs';
 
 	protected $fillable = [
