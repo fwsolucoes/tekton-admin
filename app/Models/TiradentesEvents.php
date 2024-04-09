@@ -24,7 +24,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class TiradentesEvents extends Model
 {
-	
+	/**
+     * @var array
+     */
 	protected $connection = 'mysql_tiradentes';
 	protected $table = 'events';
 	

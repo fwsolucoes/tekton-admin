@@ -32,7 +32,7 @@ class TiradentesController extends Controller
     
            
     
-            $teste=TiradentesEvents::find(65);
+            $teste=TiradentesEvents::where('id',65)->first();
 
             $log=new Log();
             $log->url='TiradentesEvents';
