@@ -53,14 +53,9 @@ class ExpressionsController extends Controller
        
 
             $message='Olá {{nome}}, tudo bem?😀! {{breakline}}{{breakline}}Aqui é Rafael, do site Meu Primeiro Caminhão! Segue abaixo o resultado de sua simulação{{breakline}}{{breakline}}
-            *Nome*: '.$data['nome'].' {{breakline}}
-            *Telefone*: '.$data['phone'].'{{breakline}}
-            *Modelo de Veículo*: '.$data['product'].'{{breakline}}
-            *Número de Parcelas*: '.$data['parcelas'].'{{breakline}}
-            *Valor de cada Parcela*: R$ '.number_format($valor_parcelas,2,",",".").'{{breakline}}{{breakline}}
-            
-            Em breve um de nossos especialistas entrará em contato para lhe passar mais detalhes e informações! {{breakline}}{{breakline}}
-            Qualquer dúvida estamos à sua disposição!{{breakline}}{{breakline}}Atenciosamente,{{breakline}}*Equipe Meu Primeiro Caminhão*';
+*Nome*: '.$data['nome'].' {{breakline}}
+*Telefone*: '.$data['phone'].'{{breakline}}*Modelo de Veículo*: '.$data['product'].'{{breakline}}*Valor do Veículo*: R$ '.number_format($data['price'],2,",",".").'{{breakline}}*Valor da Entrada*: R$ '.number_format($data['price']*0.3,2,",",".").'{{breakline}}*Número de Parcelas*: '.$data['parcelas'].'{{breakline}}*Valor de cada Parcela*: R$ '.number_format($valor_parcelas,2,",",".").'{{breakline}}{{breakline}}Em breve um de nossos especialistas entrará em contato para lhe passar mais detalhes e informações! {{breakline}}{{breakline}}
+Qualquer dúvida estamos à sua disposição!{{breakline}}{{breakline}}Atenciosamente,{{breakline}}*Equipe Meu Primeiro Caminhão*';
          
             $content=str_replace('{{nome}}',$data['nome'],$message);
      
