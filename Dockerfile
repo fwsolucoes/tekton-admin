@@ -29,6 +29,7 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql pdo_pgsql pgsql session xml zip 
     && pecl install redis-${REDIS_LIB_VERSION} \
     && docker-php-ext-enable redis \
     && pecl install swoole \
+    && brew install pcre \
     && docker-php-ext-enable swoole
 
 # Composer
