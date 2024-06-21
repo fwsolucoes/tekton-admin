@@ -57,7 +57,7 @@ class ExpressionsController extends Controller
             *Telefone*: '.$data['phone'].'{{breakline}}
             *Modelo de Veículo*: '.$data['product'].'{{breakline}}
             *Número de Parcelas*: '.$data['parcelas'].'{{breakline}}
-            *Valor de cada Parcela*: R$ '.number_format($valor_parcela,2,",",".").'{{breakline}}{{breakline}}
+            *Valor de cada Parcela*: R$ '.number_format($valor_parcelas,2,",",".").'{{breakline}}{{breakline}}
             
             Em breve um de nossos especialistas entrará em contato para lhe passar mais detalhes e informações! {{breakline}}{{breakline}}
             Qualquer dúvida estamos à sua disposição!{{breakline}}{{breakline}}Atenciosamente,{{breakline}}*Equipe Meu Primeiro Caminhão*';
