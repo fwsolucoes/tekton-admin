@@ -28,7 +28,6 @@ RUN apt-get update -y \
 RUN docker-php-ext-install mysqli pdo pdo_mysql pdo_pgsql pgsql session xml zip iconv simplexml pcntl gd fileinfo \
     && pecl install redis-${REDIS_LIB_VERSION} \
     && docker-php-ext-enable redis \
-    && brew install pcre \
     && pecl install swoole \
     && docker-php-ext-enable swoole
 
