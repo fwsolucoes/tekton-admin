@@ -91,4 +91,53 @@ Qualquer dúvida estamos à sua disposição!{{breakline}}{{breakline}}Atenciosa
     }
 
 
+     /**
+     * Show the application dashboard.
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\Support\Renderable|\Illuminate\Http\RedirectResponse
+     */
+    public function formulario(Request $request)
+    {
+
+        $data= json_decode($request->getContent(),true);
+     
+             
+
+            $message='Olá {{nome}}, tudo bem?😀! {{breakline}}{{breakline}}Recebemos os seus dados preenchidos em nossa página, no site Meu Primeiro Caminhão!{{breakline}}{{breakline}}*1) Nome*: '.$data['Nome_completo']['first_name'].' {{breakline}}*2) Telefone*: '.$data['phone'].'{{breakline}}*3) Você possuí algum valor para dar como parte no negócio?*: '.$data['dropdown'].'{{breakline}}*4) Você possuí algum veículo para dar como parte no negócio?*: '.$data['dropdown_1'].'{{breakline}}*5) Você precisa de um caminhão para agora (de forma imediata)?*: '.$data['dropdown_2'].'{{breakline}}*6) Qual é o valor do caminhão que você está buscando?*: '.$data['dropdown_3'].'{{breakline}}*7) Você sabe qual veículo quer?*: '.$data['dropdown_4'].'{{breakline}}*8) A partir de qual ano precisa ser esse veículo?*: '.$data['dropdown_5'].'{{breakline}}*9) Qual implemento? *: '.$data['dropdown_6'].'{{breakline}}*10) Você sabe onde vai agregar?*: '.$data['dropdown_7'].'{{breakline}}*11) Quanto vai ganhar por mês?*: '.$data['dropdown_8'].'{{breakline}}*12) Que tipo de carga vai carregar?*: '.$data['dropdown_9'].'{{breakline}}*13) Se fecharmos negócio hoje, quando você começa a carregar?*: '.$data['dropdown_10'].'{{breakline}}Em breve um de nossos especialistas entrará em contato para lhe passar mais detalhes e informações! {{breakline}}{{breakline}}Qualquer dúvida estamos à sua disposição!{{breakline}}{{breakline}}Atenciosamente,{{breakline}}*Equipe Meu Primeiro Caminhão*';
+         
+            $content=str_replace('{{nome}}',$data['nome'],$message);
+     
+            $phone=str_replace([' ','(',')','-','+'],'',$data['phone']);
+         
+
+            $payload_whatsapp= [
+                "number" => $phone,
+                "openTicket"=>"1",
+                "queueId"=>"30",
+                "body"=>$content
+            ]; 
+
+
+            $send_whatsapp = Http::withHeaders([
+            'Content-Type' => 'application/json',
+            'Authorization' => 'Bearer 7240e86e-240f-4d30-8626-7fc9be84f2db'
+            ])->post('https://api.zapychat.com/api/messages/send',  $payload_whatsapp);
+
+            $response_whatsapp=json_decode($send_whatsapp,true);
+
+
+           
+
+            
+            
+
+
+        
+                   
+
+       
+    }
+
+
 }

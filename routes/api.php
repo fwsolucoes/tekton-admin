@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/v1/expressions', [ExpressionsController::class, 'catalogo'])->withoutMiddleware("throttle:api");
+Route::post('/v1/expressions-formulario', [ExpressionsController::class, 'formulario'])->withoutMiddleware("throttle:api");
 Route::post('/v1/webhook-shopify', [CyroController::class, 'shopify_webhook'])->withoutMiddleware("throttle:api");
 Route::post('/v1/cartpanda-webhook', [CyroController::class, 'cartpanda_webhook'])->withoutMiddleware("throttle:api");
 Route::post('/products', [CyroController::class, 'products'])->withoutMiddleware("throttle:api");
