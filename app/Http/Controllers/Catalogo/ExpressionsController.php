@@ -33,7 +33,7 @@ class ExpressionsController extends Controller
     {
 
         $data= json_decode($request->getContent(),true);
-        $participants=$data['participants'];
+     
         $numero_parcelas=(int) str_replace(' Parcelas','',$data['parcelas']);
 
         
