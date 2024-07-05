@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Catalogo\ExpressionsController;
+use App\Http\Controllers\ExpoCatolica\ExpoController;
 use App\Http\Controllers\Tiradentes\TiradentesController;
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +28,4 @@ Route::post('/products', [CyroController::class, 'products'])->withoutMiddleware
 
 Route::get('/v1/teste', [TiradentesController::class, 'teste'])->withoutMiddleware("throttle:api");
 
-
+Route::post('/v1/expocatolica', [ExpoController::class, 'formulario'])->withoutMiddleware("throttle:api");
