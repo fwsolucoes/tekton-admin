@@ -57,7 +57,7 @@ class ExpoController extends Controller
             $send_whatsapp = Http::withHeaders([
             'Content-Type' => 'application/json',
             'Authorization' => 'Bearer sanctonsaojose'
-            ])->post('https://api.zapychat.com/api/messages/send',  $payload_whatsapp);
+            ])->post('https://apichat.sancton.com.br/api/messages/send',  $payload_whatsapp);
 
             $response_whatsapp=json_decode($send_whatsapp,true);
 
