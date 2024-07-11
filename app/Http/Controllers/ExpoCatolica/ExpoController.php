@@ -1,8 +1,5 @@
 <?php
 
-namespace App\Http\Controllers;
-
-
 namespace App\Http\Controllers\ExpoCatolica;
 
 use App\Http\Controllers\Controller;

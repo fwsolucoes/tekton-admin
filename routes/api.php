@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Catalogo\ExpressionsController;
 use App\Http\Controllers\ExpoCatolica\ExpoController;
 use App\Http\Controllers\Tiradentes\TiradentesController;
 /*
