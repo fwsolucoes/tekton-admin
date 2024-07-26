@@ -37,18 +37,18 @@ class ExpressionsController extends Controller
         
 
         if($numero_parcelas==12){
-            $valor_parcelas=((int)$data['price']-(int)$data['price']*0.3 +4000)*0.085 ;
+            $valor_parcelas=((int)$data['price']-(int)$data['price']*0.3 +4000)*0.137 ;
         }
 
         if($numero_parcelas==24){
-            $valor_parcelas=((int)$data['price']-(int)$data['price']*0.3 +4000)*0.085 ;
+            $valor_parcelas=((int)$data['price']-(int)$data['price']*0.3 +4000)*0.0897 ;
         }
         if($numero_parcelas==36){
-            $valor_parcelas=((int)$data['price']-(int)$data['price']*0.3 +4000)*0.075 ;
+            $valor_parcelas=((int)$data['price']-(int)$data['price']*0.3 +4000)*0.081 ;
         }
 
         if($numero_parcelas==48){
-            $valor_parcelas=((int)$data['price']-(int)$data['price']*0.3 +4000)*0.065 ;
+            $valor_parcelas=((int)$data['price']-(int)$data['price']*0.3 +4000)*0.069 ;
         }
         
 
