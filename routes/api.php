@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Catalogo\ExpressionsController;
 use App\Http\Controllers\ExpoCatolica\ExpoController;
 use App\Http\Controllers\Tiradentes\TiradentesController;
+use App\Http\Controllers\Unitrinus\ExportlistController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,10 +24,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/v1/expressions', [ExpressionsController::class, 'catalogo'])->withoutMiddleware("throttle:api");
 Route::post('/v1/expressions-formulario', [ExpressionsController::class, 'formulario'])->withoutMiddleware("throttle:api");
-Route::post('/v1/webhook-shopify', [CyroController::class, 'shopify_webhook'])->withoutMiddleware("throttle:api");
-Route::post('/v1/cartpanda-webhook', [CyroController::class, 'cartpanda_webhook'])->withoutMiddleware("throttle:api");
-Route::post('/products', [CyroController::class, 'products'])->withoutMiddleware("throttle:api");
 
+
+Route::get('/v1/export-html/{id}', [ExportlistController::class, 'export_html'])->withoutMiddleware("throttle:api");
 
 Route::get('/v1/teste', [TiradentesController::class, 'teste'])->withoutMiddleware("throttle:api");
 
