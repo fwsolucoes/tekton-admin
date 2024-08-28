@@ -32,7 +32,7 @@ class ExportlistController extends Controller
 
          $list= UnitrinusList::where("id",$id)->first();
 
-        $questions = DB::select('
+        $questions = DB::connection("unitrinus")->select('
         SELECT 
             ROW_NUMBER() OVER (ORDER BY q.id) AS seq_num,
             q.id,
