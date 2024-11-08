@@ -9,7 +9,7 @@ use App\Models\UnitrinusList;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 
 
 class IouvidorController extends Controller
@@ -51,7 +51,7 @@ class IouvidorController extends Controller
         $ocorrencia->descricao=$webhook['descricao'];
         $ocorrencia->data=Carbon::now();
         $ocorrencia->id_entidade=3;
-        $ocorrencia->codigo='2024-S-'.rand(5);
+        $ocorrencia->codigo='2024-S-'.Str::random(10);;
         $ocorrencia->id_usuario=100;
         $ocorrencia->id_tipo=$webhook['tipo'];
         $ocorrencia->anonimo=0;
