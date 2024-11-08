@@ -101,6 +101,23 @@ return [
             'sslmode' => 'prefer',
         ],
 
+        'iouvidor' => [
+            'driver' => 'mysql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST_IOUVIDOR', '127.0.0.1'),
+            'port' => env('DB_PORT_IOUVIDOR', '5432'),
+            'database' => env('DB_DATABASE_IOUVIDOR', 'forge'),
+            'username' => env('DB_USERNAME_IOUVIDOR', 'forge'),
+            'password' => env('DB_PASSWORD_IOUVIDOR', ''),
+           
+            'charset' => 'utf8',
+            
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'search_path' => 'public',
+            'sslmode' => 'prefer',
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),

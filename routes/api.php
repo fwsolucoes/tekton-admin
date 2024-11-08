@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Catalogo\ExpressionsController;
 use App\Http\Controllers\ExpoCatolica\ExpoController;
+use App\Http\Controllers\Iouvidor\IouvidorController;
 use App\Http\Controllers\Tiradentes\TiradentesController;
 use App\Http\Controllers\Unitrinus\ExportlistController;
 
@@ -23,6 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/v1/expressions', [ExpressionsController::class, 'catalogo'])->withoutMiddleware("throttle:api");
+Route::post('/v1/fluxo_webhook', [IouvidorController::class, 'fluxo_webhook'])->withoutMiddleware("throttle:api");
+
 Route::post('/v1/expressions-formulario', [ExpressionsController::class, 'formulario'])->withoutMiddleware("throttle:api");
 
 
