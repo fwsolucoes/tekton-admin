@@ -48,7 +48,7 @@ class IouvidorController extends Controller
 
         $ocorrencia= new Ocorrencias();
         $ocorrencia->nome=$webhook['nome'];
-        $ocorrencia->descricao=$webhook['descicao'];
+        $ocorrencia->descricao=$webhook['descricao'];
         $ocorrencia->data=Carbon::now();
         $ocorrencia->id_entidade=3;
         $ocorrencia->codigo='2024-S-'.rand(5);
