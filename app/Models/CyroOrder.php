@@ -24,6 +24,7 @@ class CyroOrder extends Model
 	protected $table = 'cyro_orders';
 	public $timestamps = false;
 
+	
 	protected $casts = [
 		'cartpanda_order_id' => 'int',
 		'new_order_sent' => 'datetime',
